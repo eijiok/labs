@@ -150,4 +150,46 @@ class CustomerTest {
         executeTest(testBuilder);
     }
 
+    private void executeTestHtml(HTMLTestBuilder testBuilder) {
+        Customer customer = testBuilder.getCustomer();
+
+        assertEquals(testBuilder.resultFirstLine() +
+                testBuilder.resultFilmsPrice() +
+                testBuilder.resultAmountOwed() +
+                testBuilder.resultPointsEarned(), customer.htmlStatement());
+    }
+
+    @Test
+    void htmlRegularTest1() {
+        HTMLTestBuilder testBuilder = new HTMLTestBuilder("Eiji");
+        testBuilder.addFilm("Back to the Future", Movie.REGULAR, 1, "2.0");
+        testBuilder.setTotal("2.0");
+        testBuilder.setPointsEarned("1");
+
+        executeTestHtml(testBuilder);
+    }
+
+
+    @Test
+    void htmlRegularTest1Day2Movies() {
+        HTMLTestBuilder testBuilder = new HTMLTestBuilder("Eiji");
+        testBuilder.addFilm("Back to the Future", Movie.REGULAR, 1, "2.0");
+        testBuilder.addFilm("Matrix", Movie.REGULAR, 1, "2.0");
+        testBuilder.setTotal("4.0");
+        testBuilder.setPointsEarned("2");
+
+        executeTestHtml(testBuilder);
+    }
+
+
+    @Test
+    void htmlchildrensTest5() {
+        HTMLTestBuilder testBuilder = new HTMLTestBuilder("Eiji");
+        testBuilder.addFilm("Toy Story", Movie.CHILDRENS, 5, "4.5");
+        testBuilder.setTotal("4.5");
+        testBuilder.setPointsEarned("1");
+
+        executeTestHtml(testBuilder);
+    }
+
 }
