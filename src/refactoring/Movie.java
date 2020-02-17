@@ -40,4 +40,12 @@ public class Movie {
         }
         return result;
     }
+
+    int getFrequentRenterPoints(int daysRented) {
+        int frequentRenterPoints = 1;
+        // add bonus for a two day new release rental
+        if ((getPriceCode() == NEW_RELEASE) && daysRented > 1)
+            frequentRenterPoints++;
+        return frequentRenterPoints;
+    }
 }
