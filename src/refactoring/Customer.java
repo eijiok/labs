@@ -20,7 +20,7 @@ public class Customer {
     };
 
     public String statement() {
-        double totalAmount = 0;
+
         int totalFrequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
 
@@ -35,12 +35,21 @@ public class Customer {
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle()+ "\t" +
                     String.valueOf(each.getCharge()) + "\n";
-            totalAmount += each.getCharge();
         }
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+
+        result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
         result += "You earned " + String.valueOf(totalFrequentRenterPoints) + " frequent renter points";
         return result;
+    }
+
+    private double getTotalCharge() {
+        double totalAmount = 0;
+        Enumeration rentalsElements = _rentals.elements();
+        while (rentalsElements.hasMoreElements()) {
+            Rental each = (Rental) rentalsElements.nextElement();
+            totalAmount += each.getCharge();
+        }
+        return totalAmount;
     }
 
 }
