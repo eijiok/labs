@@ -1,4 +1,4 @@
-package refactoring;
+package refactoring.example;
 
 import org.junit.jupiter.api.Test;
 

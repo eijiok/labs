@@ -1,6 +1,6 @@
-package refactoring.price;
+package refactoring.example.price;
 
-import refactoring.Movie;
+import refactoring.example.Movie;
 
 public class ChildrenPrice extends Price {
     @Override

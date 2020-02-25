@@ -1,4 +1,4 @@
-package refactoring;
+package refactoring.example;
 
 public class Rental {
     private Movie _movie;

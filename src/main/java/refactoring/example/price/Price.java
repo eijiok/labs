@@ -1,4 +1,4 @@
-package refactoring.price;
+package refactoring.example.price;
 
 public abstract class Price {
 

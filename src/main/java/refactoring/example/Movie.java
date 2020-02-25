@@ -1,9 +1,9 @@
-package refactoring;
+package refactoring.example;
 
-import refactoring.price.ChildrenPrice;
-import refactoring.price.NewReleasePrice;
-import refactoring.price.Price;
-import refactoring.price.RegularPrice;
+import refactoring.example.price.ChildrenPrice;
+import refactoring.example.price.NewReleasePrice;
+import refactoring.example.price.Price;
+import refactoring.example.price.RegularPrice;
 
 public class Movie {
     public static final int CHILDRENS = 2;

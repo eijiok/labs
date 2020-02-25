@@ -1,9 +1,9 @@
-package refactoring;
+package refactoring.example;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestBuilder {
+public class HTMLTestBuilder {
     private Customer customer;
     private String customerName;
 
@@ -11,16 +11,16 @@ public class TestBuilder {
     private String total;
     private String pointsEarned;
 
-    public TestBuilder() {
+    public HTMLTestBuilder() {
     }
 
-    public TestBuilder (String customerName) {
+    public HTMLTestBuilder(String customerName) {
         this.customerName = customerName;
         customer = new Customer(this.customerName);
         listFilmPrices = new ArrayList<>();
     }
 
-    public TestBuilder addFilm(String filmTitle, int priceCode, int daysRented, String filmPrice) {
+    public HTMLTestBuilder addFilm(String filmTitle, int priceCode, int daysRented, String filmPrice) {
 
         Movie movie = new Movie(filmTitle, priceCode);
         Rental rental = new Rental(movie, daysRented);
@@ -33,14 +33,22 @@ public class TestBuilder {
         return customer;
     }
 
+    /**
+     * <H1>Rentals for <EM>Eiji</EM></H1><P>
+     * @return
+     */
     public String resultFirstLine() {
-        return "Rental Record for " + customerName + "\n";
+        return "<H1>Rentals for <EM>"+customerName+"</EM></H1><P>\n";
     }
 
+    /**
+      * Back to the Future: 2.0<BR>
+     * @return
+     */
     public String resultFilmsPrice() {
         StringBuilder sb = new StringBuilder();
         for (FilmPrice filmPrice : listFilmPrices) {
-            sb.append("\t").append(filmPrice.filmTitle).append("\t").append(filmPrice.filmPrice).append("\n");
+            sb.append(filmPrice.filmTitle).append(": ").append(filmPrice.filmPrice).append("<BR>\n");
         }
         return sb.toString();
     }
@@ -53,12 +61,20 @@ public class TestBuilder {
         this.pointsEarned = pointsEarned;
     }
 
+    /**
+     *      <P>You owe <EM>2.0</EM><P>
+     * @return
+     */
     public String resultAmountOwed() {
-        return "Amount owed is " + total + "\n";
+        return "<P>You owe <EM>"+total+"</EM><P>\n";
     }
 
+    /**
+     *      On this rental you earned <EM>1</EM> frequent renter points<P>
+     * @return
+     */
     public String resultPointsEarned() {
-        return "You earned " + pointsEarned + " frequent renter points";
+        return "On this rental you earned <EM>"+pointsEarned+"</EM> frequent renter points<P>";
     }
 
     class FilmPrice {
