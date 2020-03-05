@@ -3,12 +3,19 @@ package refactoring.codesmells.dispensables.comments;
 import java.util.Random;
 
 /**
+ * Comentários são usados como desodorante (escondem um cheiro ruim)
+ *
  * Comments are usually created with the best of intentions,
  * when the author realizes that his or her code isn’t intuitive or obvious.
  *
  * In such cases, comments are like a deodorant masking the smell of fishy code that could be improved.
  *
  * The best comment is a good name for a method or class.
+ *
+ * Como Refatorar:
+ * - Extraia os métodos em blocos com comentário
+ * - Renomeie métodos que não estão claros
+ * - Use asserção para comentários de regras
  *
  * Ignore when:
  * - When explaining WHY something is being implemented in a particular way.
