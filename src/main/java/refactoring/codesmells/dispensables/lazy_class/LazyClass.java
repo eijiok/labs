@@ -1,4 +1,4 @@
-package refactoring.codesmells.dispensables.lazyclass;
+package refactoring.codesmells.dispensables.lazy_class;
 
 /**
  * Classe não faz o suficiente para justificar sua existência

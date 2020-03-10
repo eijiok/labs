@@ -1,4 +1,4 @@
-package refactoring.codesmells.dispensables.deadcode;
+package refactoring.codesmells.dispensables.dead_code;
 
 
 /**

@@ -1,4 +1,4 @@
-package refactoring.codesmells.dispensables.speculativegenerality;
+package refactoring.codesmells.dispensables.speculative_generality;
 
 /**
  * Estrutura desnecessariamente muito grande para o futuro que nunca chega

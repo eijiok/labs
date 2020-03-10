@@ -1,4 +1,4 @@
-package refactoring.codesmells.dispensables.duplicatedcode;
+package refactoring.codesmells.dispensables.duplicated_code;
 
 /**
  * Como refatorar:

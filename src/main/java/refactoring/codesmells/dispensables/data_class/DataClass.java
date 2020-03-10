@@ -1,4 +1,4 @@
-package refactoring.codesmells.dispensables.dataclass;
+package refactoring.codesmells.dispensables.data_class;
 
 /**
  * Classes com campos e métodos acessores.
