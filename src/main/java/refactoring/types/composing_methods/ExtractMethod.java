@@ -13,7 +13,10 @@ public class ExtractMethod {
     void printOwing() {
         printBanner();
 
-        // Print details.
+        printDetails();
+    }
+
+    private void printDetails() {
         System.out.println("name: " + name);
         System.out.println("amount: " + getOutstanding());
     }

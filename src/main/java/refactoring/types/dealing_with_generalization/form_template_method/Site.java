@@ -8,6 +8,14 @@ package refactoring.types.dealing_with_generalization.form_template_method;
  * <br />
  * <p><strong>Task</strong>: </p>
  */
-public class Site {
+public abstract class Site {
     protected double taxRate;
+
+    public double getBillableAmount() {
+        return getBase() * getTax(getBase());
+    }
+
+    protected abstract double getTax(double base);
+
+    protected abstract double getBase();
 }

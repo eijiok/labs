@@ -3,11 +3,11 @@ package refactoring.types.moving_features.extract_class;
 public class Person {
 
     private String name;
-    private String officeAreaCode;
-    private String officeNumber;
+
+    private TelephoneNumber telephoneNumber = new TelephoneNumber();
 
     public String getTelephoneNumber() {
-        return officeAreaCode + "-" + officeNumber;
+        return telephoneNumber.getTelephoneNumber();
     }
 
     public void setName(String name) {
@@ -15,13 +15,12 @@ public class Person {
     }
 
     public void setOfficeAreaCode(String officeAreaCode) {
-        this.officeAreaCode = officeAreaCode;
+        telephoneNumber.setOfficeAreaCode(officeAreaCode);
     }
 
     public void setOfficeNumber(String officeNumber) {
-        this.officeNumber = officeNumber;
+        telephoneNumber.setOfficeNumber(officeNumber);
     }
-
 
     public static void main(String[] args) {
         Person extractClass = new Person();
